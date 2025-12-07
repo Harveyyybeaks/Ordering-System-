@@ -4,327 +4,86 @@ using namespace std;
 int main()
 {
 
-    char Menu, Coffee, toppingchoice, syrup, milkbased, bobamilktea, saucechoice, coffeemilk, addchoice, AddOns;
+    char Menu, Coffee, toppingchoice, syrup, milkbased, bobamilktea, saucechoice, coffeemilk, addyesno, addchoice, AddOns;
     double coffeePrice, priceToppings, milkbasedPrice, priceSyrup, bobamilkteaPrice, saucePrice, coffeemilkPrice, addPrice;
-    double price, totalPrice, bobaPrice, AddOnsPrice;
+    double price, totalPrice, bobaPrice, AddOnsPrice, payment;
+    int total, quantity, firstQty, addQty, addonTotal;
     {
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "          ORDERING SYSTEM          " << endl;
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-        cout << " A. Coffee "  << endl;
-        cout << " B. Milk based "<< endl;
-        cout << " C. Boba Milktea " << endl;
+        cout << " 1. Coffee "  << endl;
+        cout << " 2. Milk based "<< endl;
+        cout << " 3. Boba Milktea " << endl;
         cout << "Choose your order: ";
         cin >> Menu;
         
-    if (Menu == 'A' || Menu == 'a')   
+    if (Menu == '1')   
         cout << " You choose a Coffee " << endl;
     
-    else if (Menu == 'B' || Menu == 'b')
+    else if (Menu == '2')
         cout << " You choose a Milk based " << endl;
         
-    else if (Menu == 'C' || Menu == 'c')
+    else if (Menu == '3')
         cout << " You choose a Boba Milktea " << endl;
        
     else {
-        cout << " Invalid Input ";
+        cout << " Invalid! ";
     return 0;
     }    
     }
-    
-    if (Menu == 'A' || Menu  == 'a')
+    if (Menu == '1')
     {
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "            ICE COFFEE             " << endl;
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "       Menu                      Price " << endl;
-        cout << "1. WMU Blend latte -              150 " << endl;
-        cout << "2. Americano -                    150 " << endl;
-        cout << "3. Caramel Macchiato -            155 " << endl;
-        cout << "4. Salted Caramel -               155 " << endl;
-        cout << "5. White Mocha -                  155 " << endl;
-        cout << "6. Cafe Mocha -                   155 " << endl;
+        cout << "A. WMU Blend latte -              150 " << endl;
+        cout << "B. Americano -                    150 " << endl;
+        cout << "C. Caramel Macchiato -            155 " << endl;
+        cout << "D. Salted Caramel -               155 " << endl;
+        cout << "E. White Mocha -                  155 " << endl;
+        cout << "F. Cafe Mocha -                   155 " << endl;
 
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "            HOT COFFEE             " << endl;
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "       Menu                      Price " << endl;
-        cout << "7. WMU Blend latte -              120 " << endl;
-        cout << "8. Americano -                    120 " << endl;
-        cout << "9. Caramel Macchiato -            125 " << endl;
-        cout << "10. Salted Caramel -              125 " << endl;
-        cout << "11. White Mocha -                 125 " << endl;
-        cout << "12. Cafe Mocha -                  125 " << endl;
-        cout << " Select your choice:";
+        cout << "G. WMU Blend latte -              120 " << endl;
+        cout << "H. Americano -                    120 " << endl;
+        cout << "I. Caramel Macchiato -            125 " << endl;
+        cout << "J. Salted Caramel -               125 " << endl;
+        cout << "K. White Mocha -                  125 " << endl;
+        cout << "L. Cafe Mocha -                   125 " << endl;
+        cout << " Select your choice: ";
         cin >> Coffee;
     
-    if (Coffee == '1')
-        coffeePrice = 150;
-
-        else if (Coffee == '2')
-        coffeePrice = 150;
-
-        else if (Coffee == '3')
-        coffeePrice = 155;
-
-        else if (Coffee == '4')
-        coffeePrice = 155;
-
-        else if (Coffee == '5')
-        coffeePrice = 155;
-
-        else if (Coffee == '6')
-        coffeePrice = 155;
-
-        else if (Coffee == '7')
-        coffeePrice = 120;
-
-        else if (Coffee == '8')
-        coffeePrice = 120;
-
-        else if (Coffee == '9')
-        coffeePrice = 125;
-
-        else if (Coffee == '10')
-        coffeePrice = 125;
-
-        else if (Coffee == '11')
-        coffeePrice = 125;
-
-        else if (Coffee == '12')
-        coffeePrice = 125;
-        
-        else {
-        cout << " Invalid Input ";
-    return 0;    
-    } 
-       totalPrice += coffeePrice;
-    }   
-    else if (Menu == 'B' || Menu == 'b')
-    {
-       cout << "-----------------------------" << endl;
-       cout << "          ICE BLEND          " << endl;
-       cout << "-----------------------------" << endl;
-       cout << "      Menu                        Price " << endl;
-       cout << "1. Thai Tea -                      120 " << endl;
-       cout << "2. Matcha -                        150 " << endl;
-       cout << "3. Dark Chocolate -                150 " << endl;
-       cout << "4. Milkyberry -                    150 " << endl;
-       cout << "5. Oreo Cream -                    150 " << endl;
-       cout << "6. Blueberry Milk -                150 " << endl; 
-       cout << "7. Match Oreo -                    155 " << endl;
-       cout << "8. Strawberry Matcha -             155 " << endl; 
-       cout << "9. Nutella -                       155 " << endl; 
+    if (Coffee == 'A' || Coffee == 'a') coffeePrice = 150;
+    else if (Coffee == 'B' || Coffee == 'b') coffeePrice = 150;
+    else if (Coffee == 'C' || Coffee == 'c') coffeePrice = 155;
+    else if (Coffee == 'D' || Coffee == 'd') coffeePrice = 155;
+    else if (Coffee == 'E' || Coffee == 'e') coffeePrice = 155;
+    else if (Coffee == 'F' || Coffee == 'f') coffeePrice = 155;
+    else if (Coffee == 'G' || Coffee == 'g') coffeePrice = 120;
+    else if (Coffee == 'H' || Coffee == 'h') coffeePrice = 120;
+    else if (Coffee == 'I' || Coffee == 'i') coffeePrice = 125;
+    else if (Coffee == 'J' || Coffee == 'j') coffeePrice = 125;
+    else if (Coffee == 'K' || Coffee == 'k') coffeePrice = 125;
+    else if (Coffee == 'L' || Coffee == 'l') coffeePrice = 125;
+    else { cout << " Invalid coffee choice! "; return 0; } 
+     
+        cout << " Enter the quantity: ";
+        cin >> quantity;
        
-       cout << "-----------------------------" << endl;
-       cout << "          HOT BLEND          " << endl;
-       cout << "-----------------------------" << endl;
-       cout << "      Menu                        Price " << endl;
-       cout << "10. Thai Tea -                      120 " << endl;
-       cout << "11. Matcha -                        120 " << endl;
-       cout << "12. Dark Chocolate -                120 " << endl;
-       cout << "13. Milkyberry -                    150 " << endl;
-       cout << "14. Oreo Cream -                    150 " << endl;
-       cout << "15. Blueberry Milk -                150 " << endl; 
-       cout << "16. Match Oreo -                    155 " << endl;
-       cout << "17. Strawberry Matcha -             155 " << endl; 
-       cout << "18. Nutella -                       155 " << endl; 
-       cout << " Select your choice: ";
-       cin >> milkbased;
+        if (quantity <= 0) { cout << " Invalid quantity. Please enter the positive number. "; return 0; } 
       
-    if (milkbased == '1')
-        milkbasedPrice = 120;
-       
-        else if (milkbased == '2')
-        milkbasedPrice = 150;
+        firstQty = quantity;
+        totalPrice = coffeePrice * firstQty;
         
-        else if (milkbased == '3')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '4')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '5')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '6')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '7')
-        milkbasedPrice = 155;
-        
-        else if (milkbased == '8')
-        milkbasedPrice = 155;
-        
-        else if (milkbased == '9')
-        milkbasedPrice = 155;
-        
-        else if (milkbased == '10')
-        milkbasedPrice = 120;
-       
-        else if (milkbased == '11')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '12')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '13')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '14')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '15')
-        milkbasedPrice = 150;
-        
-        else if (milkbased == '16')
-        milkbasedPrice = 155;
-        
-        else if (milkbased == '17')
-        milkbasedPrice = 155;
-        
-        else if (milkbased == '18')
-        milkbasedPrice = 155;
-        
-        else {
-        cout << " Invalid Input " << endl;
-    return 0;
-    }    
-    double payment;
-        cout << " Total Price: " << milkbasedPrice << endl;
-        cout << " Enter the amount you want to pay: ";
-        cin >> payment;
+        cout << " Price per item: " << coffeePrice << endl;
+        cout << " Quantity: " << firstQty << endl;
+        cout << " Subtotal: " << totalPrice << endl;
     
-    if (payment >= milkbasedPrice) {
-    double change = payment - milkbasedPrice;
-        cout << " Payment successfull " << endl;
-        cout << "Your change is: " << change << " PHP" << endl;
-    }
-    else {
-    double shortfall = milkbasedPrice - payment;
-        cout << " Insufficient Funds " << shortfall << " PHP." << endl;
-    }
-    return 0;
-    }  
-    
-    else if (Menu == 'C' || Menu == 'c')
-    {
-        cout << "--------------------------------" << endl;
-        cout << "             GRAND              " << endl;
-        cout << "--------------------------------" << endl;
-        cout << "      Menu                      Price " << endl;
-        cout << "1. Brown Sugar -                 150 " << endl;
-        cout << "2. Wintermelon -                 150 " << endl;
-        cout << "3. Matcha -                      150 " << endl;
-        cout << "4. Okinawa -                     150 " << endl;
-        cout << "5. Strawberry Vanilla -          150 " << endl;
-        cout << "6. Korean Banana -               150 " << endl;
-        cout << "7. Dark Choco -                  150 " << endl;
-        cout << "8. Red Velvet -                  150 " << endl;
-        cout << "9. Caramel Macchiato -           150 " << endl;
-        
-        cout << "--------------------------------" << endl;
-        cout << "             DEMI               " << endl;
-        cout << "--------------------------------" << endl;
-        cout << "       Menu                     Price " << endl;
-        cout << "10. Brown Sugar -                 130 " << endl;
-        cout << "11. Wintermelon -                 130 " << endl;
-        cout << "12. Matcha -                      130 " << endl;
-        cout << "13. Okinawa -                     130 " << endl;
-        cout << "14. Strawberry Vanilla -          130 " << endl;
-        cout << "15. Korean Banana -               130 " << endl;
-        cout << "16. Dark Choco -                  130 " << endl;
-        cout << "17. Red Velvet -                  130 " << endl;
-        cout << "18. Caramel Macchiato -           130 " << endl;
-        cout << " Select your choice: ";
-        cin >> bobamilktea;
-        
-    if (bobamilktea == '1')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '2')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '3')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '4')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '5')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '6')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '7')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '8')
-        bobamilkteaPrice = 150;
-        
-        else if (bobamilktea == '9')
-        bobamilkteaPrice = 150;
-        
-        else {
-        cout << " Invalid Input " << endl;
-    return 0;    
-    }
-    {
-        cout << "------------------------------------" << endl;
-        cout << "        Do you want to add?         " << endl;
-        cout << "------------------------------------" << endl;
-        cout << "1. Yes                              " << endl;
-        cout << "2. No                               " << endl;
-        cout << " Select your choice: ";
-        cin >> bobamilktea;
-    }  
-    if (bobamilktea == '1')
-    {
-        cout << "------------------------------------" << endl;
-        cout << "                ADD                 " << endl;
-        cout << "------------------------------------" << endl;
-        cout << "a. Cheesecake -                  30 " << endl;
-        cout << "b. Nata / Boba Pearl -           25 " << endl;
-        cout << " Select your choice: ";
-        cin >> addchoice;
-        
-    if (addchoice == 'a' || addchoice == 'A')
-        addPrice = 30;
-        
-    else if (addchoice == 'b' || addchoice == 'B')
-        addPrice = 25;    
-    
-    else 
-        cout << " Invalid Input ";
-    }
-    else if (bobamilktea == '2')
-    {
-        cout << "" << endl;
-    }
-    else {
-        cout << " Invalid Input ";
-    }
-        bobaPrice += bobamilkteaPrice;
-        bobaPrice += addPrice;
-        
-    double payment;
-        cout << " Total Price: " << bobaPrice << endl;
-        cout << " Enter the amount you want to pay: ";
-        cin >> payment;
-    
-    if (payment >= bobaPrice) {
-    double change = payment - bobaPrice;
-        cout << " Payment successfull " << endl;
-        cout << "Your change is: " << change << " PHP" << endl;
-    }
-    else {
-    double shortfall = bobamilkteaPrice - payment;
-        cout << " Insufficient Funds " << shortfall << " PHP." << endl;
-    }
-    return 0; 
-    }
-    {
         cout << "-------------------------------------------" << endl;
         cout << " Do you want to add extra coffee and milk? " << endl;
         cout << "-------------------------------------------" << endl;
@@ -332,7 +91,7 @@ int main()
         cout << "2. No                                " << endl;
         cout << " Select your choice: ";
         cin >> coffeemilk;
-    }  
+      
     if (coffeemilk == '1')
     {
         cout << "------------------------------------" << endl;
@@ -343,27 +102,12 @@ int main()
         cout << " Select your choice: ";
         cin >> coffeemilk;
     
-    if (coffeemilk == 'a' || coffeemilk == 'A')
-        coffeemilkPrice = 35;
-        
-    else if (coffeemilk == 'b' || coffeemilk == 'B')
-        coffeemilkPrice = 20;  
-      
-    else {
-        cout << " Invalid Input " << endl;
-    } 
-    }
-    else if (coffeemilk == '2')
-    {
-        cout << "" << endl;
-    }   
-    else {
-        cout << " Invalid Input ";
-    return 0; 
-    }   
+    if (coffeemilk == 'a' || coffeemilk == 'A') coffeemilkPrice = 35;
+    else if (coffeemilk == 'b' || coffeemilk == 'B') coffeemilkPrice = 20;
+    else { cout << " Invalid! "; return 0; }
     
-    totalPrice += coffeemilkPrice;
-    {  
+        totalPrice += coffeemilkPrice;
+    } 
         cout << "---------------------------------" << endl;
         cout << "    Do you want to add syrup?    "<< endl;
         cout << "---------------------------------" << endl;
@@ -371,7 +115,7 @@ int main()
         cout << "2. No " << endl;
         cout << " Select your choice: ";
         cin >> syrup;
-    }
+    
     if (syrup == '1')
     {   
         cout << "------------------------------" << endl;
@@ -385,37 +129,12 @@ int main()
         cout << " Select your choice: ";
         cin >> syrup;
        
-    if (syrup == 'c' || syrup == 'C')
-        priceSyrup = 20;
-        
-        else if (syrup == 'd' || syrup == 'D')
-        priceSyrup = 20;
-        
-        else if (syrup == 'e' || syrup == 'E')
-        priceSyrup = 20;
-        
-        else if (syrup == 'f' || syrup == 'F')
-        priceSyrup = 20;
-        
-        else if (syrup == 'g' || syrup == 'G')
-        priceSyrup = 20;
-       
-        else {
-        cout << " Invalid Input " << endl;
-    }
-    } 
-    else if (syrup == '2')
-    {
-        cout << "" << endl;
-    }    
-    else {
-        cout << " Invalid Input ";
-    return 0;    
-    }
-        priceSyrup = 20;
-        totalPrice += priceSyrup;
+    if (syrup == 'c' || syrup == 'C') priceSyrup = 20;
+    else if (syrup == 'd' || syrup == 'D') priceSyrup = 20;
+    else { cout << " Invalid! "; return 0; }
     
-    { 
+        totalPrice += priceSyrup;
+    } 
         cout << "------------------------------" << endl;
         cout << "   Do you want to add Sauce?  " << endl;
         cout << "------------------------------" << endl;
@@ -423,7 +142,7 @@ int main()
         cout << "2. No                         " << endl;
         cout << " Select your choice: ";
         cin >> saucechoice;
-    }    
+        
     if (saucechoice == '1')
     {
         cout << "------------------------------" << endl;
@@ -436,32 +155,14 @@ int main()
         cout << " Select your choice: ";
         cin >> saucechoice;
         
-    if (saucechoice == 'h' || saucechoice == 'H') 
-        saucePrice = 30;
-        
-        else if (saucechoice == 'i' || saucechoice == 'I')
-        saucePrice = 30;
-        
-        else if (saucechoice == 'j' || saucechoice == 'J')
-        saucePrice = 30;
-        
-        else if (saucechoice == 'k' || saucechoice == 'K')
-        saucePrice = 30;    
+    if (saucechoice == 'h' || saucechoice == 'H') saucePrice = 30;
+    else if (saucechoice == 'i' || saucechoice == 'I') saucePrice = 30;
+    else if (saucechoice == 'j' || saucechoice == 'J') saucePrice = 30;
+    else if (saucechoice == 'k' || saucechoice == 'K') saucePrice = 30;    
+    else { cout << " Invalid! "; return 0; }  
     
-        else {
-        cout << " Invalid Input " << endl;
-    }   
+        totalPrice += saucePrice;
     }
-    else if (saucechoice == '2')
-    {
-        cout << "" << endl;
-    }
-    else {
-        cout << " Invalid Input " << endl;
-    return 0;    
-    }
-    totalPrice += saucePrice;
-    {
     cout << "-------------------------------------" << endl;
     cout << "      Do you want to add-ons?        " << endl;
     cout << "-------------------------------------" << endl;
@@ -469,7 +170,7 @@ int main()
     cout << "2. No                                " << endl;
     cout << " Select your choice: ";
     cin >> AddOns; 
-    }
+    
     if (AddOns == '1')
     {
         cout << "---------------------------------" << endl;
@@ -482,33 +183,38 @@ int main()
         cout << " Select your choice: ";
         cin >> AddOns;
         
-    if (AddOns == 'l' || AddOns == 'L')
-        AddOnsPrice = 25;
-        
-        else if (AddOns == 'm' || AddOns == 'M')
-        AddOnsPrice = 25;
+    if (AddOns == 'l' || AddOns == 'L') AddOnsPrice = 25;
+    else if (AddOns == 'm' || AddOns == 'M') AddOnsPrice = 25;
+    else if (AddOns == 'n' || AddOns == 'N') AddOnsPrice = 25;
+    else if (AddOns == 'o' || AddOns == 'O') AddOnsPrice = 25;
+    else { cout << " Invalid! "; return 0; }
     
-        else if (AddOns == 'n' || AddOns == 'N')
-        AddOnsPrice = 25;
-        
-        else if (AddOns == 'o' || AddOns == 'O')
-        AddOnsPrice = 25;
-        
-        else {
-        cout << " Invalid Input " << endl;
-    }
-    }
-    else if (AddOns == '2')
-    {
-        cout << "" << endl;
-    }
-    else {
-        cout << " Invalid Input " << endl;
-    return 0;
-    }
     totalPrice += AddOnsPrice;
+    }
+    cout << "----------------------------------------" << endl;
+    cout << "      Do you want to add toppings?      " << endl;
+    cout << "----------------------------------------" << endl;
+    cout << "1. Yes                                  " << endl;
+    cout << "2. No                                   " << endl;
+    cout << " Select your choice: ";
+    cin >> toppingchoice;
     
-    double payment;
+    if (toppingchoice == '1')
+    {
+        cout << "-----------------------------------" << endl;
+        cout << "            Toppings               " << endl;
+        cout << "-----------------------------------" << endl;
+        cout << "p. Whipped Cream -              30 " << endl;
+        cout << "q. Vanilla Ice Cream -          30 " << endl;
+        cout << " Select your choice: ";
+        cin >> toppingchoice;
+        
+    if (toppingchoice == 'p' || toppingchoice == 'P') priceToppings = 30;
+    else if (toppingchoice == 'q' || toppingchoice == 'Q') priceToppings = 30;
+    else { cout << " Invalid! "; return 0; }
+    
+    totalPrice += priceToppings;
+    }
         cout << " Total Price: " << totalPrice << endl;
         cout << " Enter the amount you want to pay: ";
         cin >> payment;
@@ -520,7 +226,215 @@ int main()
     }
     else {
     double shortfall = totalPrice - payment;
-        cout << " Insufficient Funds " << shortfall << " PHP." << endl;
+        cout << " Insufficient Funds! Kulang ka ng " << shortfall << " PHP." << endl;
     }
     return 0;
+   }
+    else if (Menu == '2')
+    {
+       cout << "-----------------------------" << endl;
+       cout << "          ICE BLEND          " << endl;
+       cout << "-----------------------------" << endl;
+       cout << "      Menu                        Price " << endl;
+       cout << "A. Thai Tea -                      120 " << endl;
+       cout << "B. Matcha -                        150 " << endl;
+       cout << "C. Dark Chocolate -                150 " << endl;
+       cout << "D. Milkyberry -                    150 " << endl;
+       cout << "E. Oreo Cream -                    150 " << endl;
+       cout << "F. Blueberry Milk -                150 " << endl; 
+       cout << "G. Match Oreo -                    155 " << endl;
+       cout << "H. Strawberry Matcha -             155 " << endl; 
+       cout << "I. Nutella -                       155 " << endl; 
+       
+       cout << "-----------------------------" << endl;
+       cout << "          HOT BLEND          " << endl;
+       cout << "-----------------------------" << endl;
+       cout << "      Menu                        Price " << endl;
+       cout << "J. Thai Tea -                      120 " << endl;
+       cout << "K. Matcha -                        120 " << endl;
+       cout << "L. Dark Chocolate -                120 " << endl;
+       cout << "M. Milkyberry -                    150 " << endl;
+       cout << "N. Oreo Cream -                    150 " << endl;
+       cout << "O. Blueberry Milk -                150 " << endl; 
+       cout << "P. Match Oreo -                    155 " << endl;
+       cout << "Q. Strawberry Matcha -             155 " << endl; 
+       cout << "R. Nutella -                       155 " << endl; 
+       cout << " Select your choice: ";
+       cin >> milkbased;
+       
+    if (milkbased == 'A' || milkbased == 'a') milkbasedPrice = 120;
+    else if (milkbased == 'B' || milkbased == 'b') milkbasedPrice = 150;
+    else if (milkbased == 'C' || milkbased == 'c') milkbasedPrice = 150;
+    else if (milkbased == 'D' || milkbased == 'd') milkbasedPrice = 150;
+    else if (milkbased == 'E' || milkbased == 'e') milkbasedPrice = 150;
+    else if (milkbased == 'F' || milkbased == 'f') milkbasedPrice = 150;
+    else if (milkbased == 'G' || milkbased == 'g') milkbasedPrice = 155;
+    else if (milkbased == 'H' || milkbased == 'h') milkbasedPrice = 155;
+    else if (milkbased == 'I' || milkbased == 'i') milkbasedPrice = 155;
+    else if (milkbased == 'J' || milkbased == 'j') milkbasedPrice = 120;
+    else if (milkbased == 'K' || milkbased == 'k') milkbasedPrice = 150;
+    else if (milkbased == 'L' || milkbased == 'l') milkbasedPrice = 150;
+    else if (milkbased == 'M' || milkbased == 'm') milkbasedPrice = 150;
+    else if (milkbased == 'N' || milkbased == 'n') milkbasedPrice = 150;
+    else if (milkbased == 'O' || milkbased == 'o') milkbasedPrice = 150;
+    else if (milkbased == 'P' || milkbased == 'p') milkbasedPrice = 155;
+    else if (milkbased == 'Q' || milkbased == 'q') milkbasedPrice = 155;
+    else if (milkbased == 'R' || milkbased == 'r') milkbasedPrice = 155;
+    else { cout << "Invalid milkbased choice!"; return 0; } 
+    
+       cout << " Enter the quantity: ";
+       cin >> quantity;
+        
+       if (quantity <= 0) { cout << " Invalid quantity. Please enter the positive number. "; return 0; }
+       
+    total = quantity * milkbasedPrice;
+    
+        cout << " Price per item: " << milkbasedPrice << endl;
+        cout << " Quantity: " << quantity << endl;
+        cout << " Total Price: " << total << endl;
+        cout << " Enter the amount you want to pay: ";
+        cin >> payment;
+    
+    if (payment >= milkbasedPrice) {
+    double change = payment - milkbasedPrice;
+        cout << " Payment successfull " << endl;
+        cout << " Your change is: " << change << " PHP" << endl;
     }
+    else {
+    double kulang = milkbasedPrice - payment;
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP." << endl;
+    }
+    return 0;
+    }  
+    
+    else if (Menu == '3')
+    {
+        cout << "--------------------------------" << endl;
+        cout << "             GRAND              " << endl;
+        cout << "--------------------------------" << endl;
+        cout << "      Menu                      Price " << endl;
+        cout << "A. Brown Sugar -                 150 " << endl;
+        cout << "B. Wintermelon -                 150 " << endl;
+        cout << "C. Matcha -                      150 " << endl;
+        cout << "D. Okinawa -                     150 " << endl;
+        cout << "E. Strawberry Vanilla -          150 " << endl;
+        cout << "F. Korean Banana -               150 " << endl;
+        cout << "G. Dark Choco -                  150 " << endl;
+        cout << "H. Red Velvet -                  150 " << endl;
+        cout << "I. Caramel Macchiato -           150 " << endl;
+        
+        cout << "--------------------------------" << endl;
+        cout << "             DEMI               " << endl;
+        cout << "--------------------------------" << endl;
+        cout << "       Menu                     Price " << endl;
+        cout << "J. Brown Sugar -                 130 " << endl;
+        cout << "K. Wintermelon -                 130 " << endl;
+        cout << "L. Matcha -                      130 " << endl;
+        cout << "M. Okinawa -                     130 " << endl;
+        cout << "N. Strawberry Vanilla -          130 " << endl;
+        cout << "O. Korean Banana -               130 " << endl;
+        cout << "P. Dark Choco -                  130 " << endl;
+        cout << "Q. Red Velvet -                  130 " << endl;
+        cout << "R. Caramel Macchiato -           130 " << endl;
+        cout << " Select your choice: ";
+        cin >> bobamilktea;
+
+    if (bobamilktea == 'A' || bobamilktea == 'a') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'B' || bobamilktea == 'b') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'C' || bobamilktea == 'c') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'D' || bobamilktea == 'd') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'E' || bobamilktea == 'e') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'F' || bobamilktea == 'f') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'G' || bobamilktea == 'g') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'H' || bobamilktea == 'h') bobamilkteaPrice = 150;
+    else if (bobamilktea == 'I' || bobamilktea == 'i') bobamilkteaPrice = 150;
+
+    else if (bobamilktea == 'J' || bobamilktea == 'j') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'K' || bobamilktea == 'k') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'L' || bobamilktea == 'l') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'M' || bobamilktea == 'm') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'N' || bobamilktea == 'n') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'O' || bobamilktea == 'o') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'P' || bobamilktea == 'p') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'Q' || bobamilktea == 'q') bobamilkteaPrice = 130;
+    else if (bobamilktea == 'R' || bobamilktea == 'r') bobamilkteaPrice = 130;
+    else { cout << "Invalid bobamilktea choice!"; return 0; }
+    
+    cout << " Enter the quantity: ";
+    cin >> quantity;
+
+    if (quantity <= 0) {
+        cout << " Invalid quantity.";
+        return 0;
+    }
+    firstQty = quantity;  
+    total = bobamilkteaPrice * firstQty;
+
+    cout << " Price per item: " << bobamilkteaPrice << endl;
+    cout << " Quantity: " << firstQty << endl;
+    cout << " Subtotal: " << total << endl;
+
+    bobaPrice += total;  
+
+    cout << "------------------------------------" << endl;
+    cout << "        Do you want to add?         " << endl;
+    cout << "------------------------------------" << endl;
+    cout << "1. Yes" << endl;
+    cout << "2. No" << endl;
+    cout << " Select your choice: ";
+    cin >> addyesno;
+
+    if (addyesno == '1') {
+
+        cout << "------------------------------------" << endl;
+        cout << "                ADD                 " << endl;
+        cout << "------------------------------------" << endl;
+        cout << "a. Cheesecake - 30" << endl;
+        cout << "b. Nata / Boba Pearl - 25" << endl;
+        cout << " Select your choice: ";
+        cin >> addchoice;
+
+        if (addchoice == 'a' || addchoice == 'A')
+            addPrice = 30;
+        else if (addchoice == 'b' || addchoice == 'B')
+            addPrice = 25;
+        else {
+            cout << " Invalid! ";
+            return 0;
+        }
+
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        int addonTotal = addPrice * addQty;
+
+        cout << " Price per item: " << addPrice << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
+
+        bobaPrice += addonTotal; 
+    }
+    else if (addyesno == '2') {
+    }
+    else {
+        cout << " Invalid Input";
+        return 0;
+    }
+    cout << " Total Price: " << bobaPrice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> payment;
+
+    if (payment >= bobaPrice) {
+        cout << " Payment successful " << endl;
+        cout << " Your change is: " << payment - bobaPrice << " PHP";
+    } else {
+    double kulang = bobaPrice - payment;
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
+    }
+    return 0;
+}
+   }
