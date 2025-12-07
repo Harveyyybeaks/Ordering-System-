@@ -12,10 +12,10 @@ int main()
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "          ORDERING SYSTEM          " << endl;
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-        cout << " 1. Coffee "  << endl;
-        cout << " 2. Milk based "<< endl;
-        cout << " 3. Boba Milktea " << endl;
-        cout << "Choose your order: ";
+        cout << "1. Coffee "  << endl;
+        cout << "2. Milk based "<< endl;
+        cout << "3. Boba Milktea " << endl;
+        cout << " Choose your order: ";
         cin >> Menu;
         
     if (Menu == '1')   
@@ -106,7 +106,20 @@ int main()
     else if (coffeemilk == 'b' || coffeemilk == 'B') coffeemilkPrice = 20;
     else { cout << " Invalid! "; return 0; }
     
-        totalPrice += coffeemilkPrice;
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        addonTotal = coffeemilkPrice * addQty;
+        
+        cout << " Price per item: " << coffeemilkPrice << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
+    
+        totalPrice += addonTotal;
     } 
         cout << "---------------------------------" << endl;
         cout << "    Do you want to add syrup?    "<< endl;
@@ -133,7 +146,20 @@ int main()
     else if (syrup == 'd' || syrup == 'D') priceSyrup = 20;
     else { cout << " Invalid! "; return 0; }
     
-        totalPrice += priceSyrup;
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        addonTotal = priceSyrup * addQty;
+    
+        cout << " Price per item: " << priceSyrup << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
+    
+        totalPrice += addonTotal;
     } 
         cout << "------------------------------" << endl;
         cout << "   Do you want to add Sauce?  " << endl;
@@ -160,8 +186,21 @@ int main()
     else if (saucechoice == 'j' || saucechoice == 'J') saucePrice = 30;
     else if (saucechoice == 'k' || saucechoice == 'K') saucePrice = 30;    
     else { cout << " Invalid! "; return 0; }  
+
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        addonTotal = saucePrice * addQty;
+        
+        cout << " Price per item: " << saucePrice << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
     
-        totalPrice += saucePrice;
+        totalPrice += addonTotal;
     }
     cout << "-------------------------------------" << endl;
     cout << "      Do you want to add-ons?        " << endl;
@@ -188,8 +227,21 @@ int main()
     else if (AddOns == 'n' || AddOns == 'N') AddOnsPrice = 25;
     else if (AddOns == 'o' || AddOns == 'O') AddOnsPrice = 25;
     else { cout << " Invalid! "; return 0; }
+
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        addonTotal = AddOnsPrice * addQty;
+        
+        cout << " Price per item: " << AddOnsPrice << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
     
-    totalPrice += AddOnsPrice;
+    totalPrice += addonTotal;
     }
     cout << "----------------------------------------" << endl;
     cout << "      Do you want to add toppings?      " << endl;
@@ -213,7 +265,20 @@ int main()
     else if (toppingchoice == 'q' || toppingchoice == 'Q') priceToppings = 30;
     else { cout << " Invalid! "; return 0; }
     
-    totalPrice += priceToppings;
+        cout << " Enter the quantity: ";
+        cin >> addQty;
+
+        if (addQty <= 0) {
+            cout << " Invalid quantity.";
+            return 0;
+        }
+        addonTotal = priceToppings * addQty;
+        
+        cout << " Price per item: " << priceToppings << endl;
+        cout << " Quantity: " << addQty << endl;
+        cout << " Subtotal: " << addonTotal << endl;
+    
+    totalPrice += addonTotal;
     }
         cout << " Total Price: " << totalPrice << endl;
         cout << " Enter the amount you want to pay: ";
@@ -225,8 +290,8 @@ int main()
         cout << "Your change is: " << change << " PHP" << endl;
     }
     else {
-    double shortfall = totalPrice - payment;
-        cout << " Insufficient Funds! Kulang ka ng " << shortfall << " PHP." << endl;
+    double kulang = totalPrice - payment;
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP." << endl;
     }
     return 0;
    }
@@ -298,7 +363,7 @@ int main()
     if (payment >= milkbasedPrice) {
     double change = payment - milkbasedPrice;
         cout << " Payment successfull " << endl;
-        cout << " Your change is: " << change << " PHP" << endl;
+        cout << "Your change is: " << change << " PHP" << endl;
     }
     else {
     double kulang = milkbasedPrice - payment;
@@ -394,14 +459,9 @@ int main()
         cout << " Select your choice: ";
         cin >> addchoice;
 
-        if (addchoice == 'a' || addchoice == 'A')
-            addPrice = 30;
-        else if (addchoice == 'b' || addchoice == 'B')
-            addPrice = 25;
-        else {
-            cout << " Invalid! ";
-            return 0;
-        }
+        if (addchoice == 'a' || addchoice == 'A') addPrice = 30;
+        else if (addchoice == 'b' || addchoice == 'B') addPrice = 25;
+        else { cout << " Invalid! "; return 0; }
 
         cout << " Enter the quantity: ";
         cin >> addQty;
@@ -410,7 +470,7 @@ int main()
             cout << " Invalid quantity.";
             return 0;
         }
-        int addonTotal = addPrice * addQty;
+        addonTotal = addPrice * addQty;
 
         cout << " Price per item: " << addPrice << endl;
         cout << " Quantity: " << addQty << endl;
@@ -421,7 +481,7 @@ int main()
     else if (addyesno == '2') {
     }
     else {
-        cout << " Invalid Input";
+        cout << " Invalid! ";
         return 0;
     }
     cout << " Total Price: " << bobaPrice << endl;
@@ -430,7 +490,7 @@ int main()
 
     if (payment >= bobaPrice) {
         cout << " Payment successful " << endl;
-        cout << " Your change is: " << payment - bobaPrice << " PHP";
+        cout << "Your change is: " << payment - bobaPrice << " PHP";
     } else {
     double kulang = bobaPrice - payment;
         cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
