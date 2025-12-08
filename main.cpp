@@ -18,16 +18,16 @@ int main()
         cin >> Menu;
         
     if (Menu == '1') 
-        cout << " You choose a Coffee " << endl;
+        cout << " You chose Coffee " << endl;
     
     else if (Menu == '2')
-        cout << " You choose a Non Coffee. " << endl;
+        cout << " You chose Non Coffee. " << endl;
         
     else if (Menu == '3')
-        cout << " You choose a Sparkling Yakult. " << endl;
+        cout << " You chose Sparkling Yakult. " << endl;
         
     else if (Menu == '4')
-        cout << " You choose a Fruit Soda. " << endl;
+        cout << " You chose Fruit Soda. " << endl;
        
     else {cout << "\n" << endl; cout << " Invalid! "; return 0;}    
     }
