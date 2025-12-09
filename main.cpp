@@ -6,7 +6,7 @@ int main()
     char Menu, Coffee, yakult, AddOns, noncoffee, soda;
     double coffeePrice, yakultPrice, noncoffeePrice, totalPrice, AddOnsPrice, payment, sodaPrice;
     int total, quantity, firstQty, addQty, addonTotal;
-    {
+    
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "          WAKE UP COFFEE           " << endl;
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
@@ -17,19 +17,9 @@ int main()
         cout << " Choose your order: ";
         cin >> Menu;
         
-    if (Menu == '1') 
-        cout << " You chose Coffee " << endl;
-    
-    else if (Menu == '2')
-        cout << " You chose Non Coffee. " << endl;
-        
-    else if (Menu == '3')
-        cout << " You chose Sparkling Yakult. " << endl;
-        
-    else if (Menu == '4')
-        cout << " You chose Fruit Soda. " << endl;
-       
-    else {cout << "\n" << endl; cout << " Invalid! "; return 0;}    
+    if (Menu < '1' || Menu > '4') {
+        cout << "Invalid menu choice!";
+    return 0;
     }
     if (Menu == '1')
     {
@@ -118,7 +108,7 @@ int main()
     
         totalPrice += AddOnsPrice;
     }  
-    else {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
+    else if (AddOns != '2') {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
         cout << "\n" << endl;
         cout << " Total Price: " << totalPrice << endl;
         cout << " Enter the amount you want to pay: ";
@@ -127,12 +117,12 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " pesos";
+        cout << "Your change is: " << payment - totalPrice << " PHP";
     } 
     else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
     }
     return 0;
     }
@@ -203,7 +193,7 @@ int main()
     
         totalPrice += AddOnsPrice;
     }  
-    else {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
+    else if (AddOns != '2') {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
         cout << "\n" << endl;
         cout << " Total Price: " << totalPrice << endl;
         cout << " Enter the amount you want to pay: ";
@@ -301,7 +291,7 @@ int main()
     
         totalPrice += AddOnsPrice;
     }
-    else {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
+    else if (AddOns != '2') {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
     cout << " Total Price: " << totalPrice << endl;
     cout << " Enter the amount you want to pay: ";
     cin >> payment;
@@ -309,11 +299,11 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " pesos";
+        cout << "Your change is: " << payment - totalPrice << " PHP";
     } else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
     }
     return 0;
 }
@@ -339,7 +329,7 @@ int main()
         cout << " Select your choice: ";
         cin >> soda;
         
-    if (soda == 'A' || yakult == 'a') sodaPrice = 49;
+    if (soda == 'A' || soda == 'a') sodaPrice = 49;
     else if (soda == 'B' || soda == 'b') sodaPrice = 49;
     else if (soda == 'C' || soda == 'c') sodaPrice = 49;
     else if (soda == 'D' || soda == 'd') sodaPrice = 49;
@@ -392,7 +382,7 @@ int main()
     
         totalPrice += AddOnsPrice;
     }
-    else {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
+    else if (AddOns != '2') {cout << "\n" << endl; cout << " Invalid! " << endl; return 0;} 
     cout << " Total Price: " << totalPrice << endl;
     cout << " Enter the amount you want to pay: ";
     cin >> payment;
@@ -400,11 +390,11 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " pesos";
+        cout << "Your change is: " << payment - totalPrice << " PHP";
     } else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
     }
 }
 return 0;
