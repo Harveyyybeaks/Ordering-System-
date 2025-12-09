@@ -127,12 +127,12 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " PHP";
+        cout << "Your change is: " << payment - totalPrice << " pesos";
     } 
     else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
     }
     return 0;
     }
@@ -309,11 +309,11 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " PHP";
+        cout << "Your change is: " << payment - totalPrice << " pesos";
     } else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
     }
     return 0;
 }
@@ -400,11 +400,11 @@ int main()
     if (payment >= totalPrice) {
         cout << " Payment successful " << endl;
         cout << "\n" << endl;
-        cout << "Your change is: " << payment - totalPrice << " PHP";
+        cout << "Your change is: " << payment - totalPrice << " pesos";
     } else {
     double kulang = totalPrice - payment;
         cout << "\n" << endl;
-        cout << " Insufficient Funds! Kulang ka ng " << kulang << " PHP";
+        cout << " Insufficient Funds! Kulang ka ng " << kulang << " pesos";
     }
 }
 return 0;
